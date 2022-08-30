@@ -1,16 +1,24 @@
 package Entidades;
 
 public class Usuario extends Modelo {
-    private String id;
+    private String idUsuario;
     private String acesso;
     private String senha;
     protected Pessoa pessoa;
 
-    public Usuario(String id, String acesso, String senha, Pessoa pessoa) {
-        this.id = id;
+    public Usuario(String idUsuario, String acesso, String senha, Pessoa pessoa) {
+        this.idUsuario = idUsuario;
         this.acesso = acesso;
         this.senha = senha;
         this.pessoa = pessoa;
+    }
+
+    public String getIdUsuario() {
+        return this.idUsuario;
+    }
+
+    public void setIdUsuario(String idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
     public String getAcesso() {
@@ -29,14 +37,6 @@ public class Usuario extends Modelo {
         this.senha = senha;
     }
 
-    public String getId() {
-        return this.id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public Pessoa getPessoa() {
         return this.pessoa;
     }
@@ -48,7 +48,7 @@ public class Usuario extends Modelo {
     @Override
     public String toString() {
         return "{" +
-                " id='" + getId() + "'" +
+                " idUsuario='" + getIdUsuario() + "'" +
                 ", acesso='" + getAcesso() + "'" +
                 ", senha='" + getSenha() + "'" +
                 ", pessoa='" + getPessoa() + "'" +

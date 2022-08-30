@@ -1,7 +1,7 @@
 package Entidades.Pessoal;
 
 public class Endereco {
-    private String id;
+    private String idEndereco;
     private String idPessoa;
     private String logradouro;
     private String numero;
@@ -9,9 +9,9 @@ public class Endereco {
     private String estado;
     private String cidade;
 
-    public Endereco(String id, String idPessoa, String logradouro, String numero, String cep, String estado,
+    public Endereco(String idEndereco, String idPessoa, String logradouro, String numero, String cep, String estado,
             String cidade) {
-        this.id = id;
+        this.idEndereco = idEndereco;
         this.idPessoa = idPessoa;
         this.logradouro = logradouro;
         this.numero = numero;
@@ -20,12 +20,12 @@ public class Endereco {
         this.cidade = cidade;
     }
 
-    public String getId() {
-        return this.id;
+    public String getIdEndereco() {
+        return this.idEndereco;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setIdEndereco(String idEndereco) {
+        this.idEndereco = idEndereco;
     }
 
     public String getIdPessoa() {
@@ -79,7 +79,7 @@ public class Endereco {
     @Override
     public String toString() {
         return "{" +
-                " id='" + getId() + "'" +
+                " idEndereco='" + getIdEndereco() + "'" +
                 ", idPessoa='" + getIdPessoa() + "'" +
                 ", logradouro='" + getLogradouro() + "'" +
                 ", numero='" + getNumero() + "'" +

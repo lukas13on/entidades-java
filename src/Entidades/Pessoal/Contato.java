@@ -1,18 +1,34 @@
 package Entidades.Pessoal;
 
 public class Contato {
-    private String id;
+    private String idContato;
     private String idPessoa;
     private String email;
     private String celular;
     private String telefone;
 
-    public Contato(String id, String idPessoa, String email, String celular, String telefone) {
-        this.id = id;
+    public Contato(String idContato, String idPessoa, String email, String celular, String telefone) {
+        this.idContato = idContato;
         this.idPessoa = idPessoa;
         this.email = email;
         this.celular = celular;
         this.telefone = telefone;
+    }
+
+    public String getIdContato() {
+        return this.idContato;
+    }
+
+    public void setIdContato(String idContato) {
+        this.idContato = idContato;
+    }
+
+    public String getIdPessoa() {
+        return this.idPessoa;
+    }
+
+    public void setIdPessoa(String idPessoa) {
+        this.idPessoa = idPessoa;
     }
 
     public String getEmail() {
@@ -39,26 +55,10 @@ public class Contato {
         this.telefone = telefone;
     }
 
-    public String getId() {
-        return this.id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getIdPessoa() {
-        return this.idPessoa;
-    }
-
-    public void setIdPessoa(String idPessoa) {
-        this.idPessoa = idPessoa;
-    }
-
     @Override
     public String toString() {
         return "{" +
-                " id='" + getId() + "'" +
+                " idContato='" + getIdContato() + "'" +
                 ", idPessoa='" + getIdPessoa() + "'" +
                 ", email='" + getEmail() + "'" +
                 ", celular='" + getCelular() + "'" +

@@ -1,24 +1,24 @@
 package Entidades.Pessoal;
 
 public class Documento {
-    private String id;
+    private String idDocumento;
     private String idPessoa;
     private String tipo;
     private String numero;
 
-    public Documento(String id, String idPessoa, String tipo, String numero) {
-        this.id = id;
+    public Documento(String idDocumento, String idPessoa, String tipo, String numero) {
+        this.idDocumento = idDocumento;
         this.idPessoa = idPessoa;
         this.tipo = tipo;
         this.numero = numero;
     }
 
-    public String getId() {
-        return this.id;
+    public String getIdDocumento() {
+        return this.idDocumento;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setIdDocumento(String idDocumento) {
+        this.idDocumento = idDocumento;
     }
 
     public String getIdPessoa() {
@@ -48,10 +48,11 @@ public class Documento {
     @Override
     public String toString() {
         return "{" +
-                " id='" + getId() + "'" +
+                " idDocumento='" + getIdDocumento() + "'" +
                 ", idPessoa='" + getIdPessoa() + "'" +
                 ", tipo='" + getTipo() + "'" +
                 ", numero='" + getNumero() + "'" +
                 "}";
     }
+
 }

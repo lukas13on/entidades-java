@@ -5,7 +5,7 @@ import Entidades.Pessoal.Documento;
 import Entidades.Pessoal.Endereco;
 
 public class Pessoa {
-    private String id;
+    private String idPessoa;
     private String nome;
     private String sobrenome;
     private String nascimento;
@@ -13,9 +13,9 @@ public class Pessoa {
     protected Contato contato;
     protected Endereco endereco;
 
-    public Pessoa(String id, String nome, String sobrenome, String nascimento, Documento documento, Contato contato,
-            Endereco endereco) {
-        this.id = id;
+    public Pessoa(String idPessoa, String nome, String sobrenome, String nascimento, Documento documento,
+            Contato contato, Endereco endereco) {
+        this.idPessoa = idPessoa;
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.nascimento = nascimento;
@@ -24,20 +24,12 @@ public class Pessoa {
         this.endereco = endereco;
     }
 
-    public String getId() {
-        return this.id;
+    public String getIdPessoa() {
+        return this.idPessoa;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public Contato getContato() {
-        return this.contato;
-    }
-
-    public void setContato(Contato contato) {
-        this.contato = contato;
+    public void setIdPessoa(String idPessoa) {
+        this.idPessoa = idPessoa;
     }
 
     public String getNome() {
@@ -72,6 +64,14 @@ public class Pessoa {
         this.documento = documento;
     }
 
+    public Contato getContato() {
+        return this.contato;
+    }
+
+    public void setContato(Contato contato) {
+        this.contato = contato;
+    }
+
     public Endereco getEndereco() {
         return this.endereco;
     }
@@ -83,13 +83,14 @@ public class Pessoa {
     @Override
     public String toString() {
         return "{" +
-                " id='" + getId() + "'" +
+                " idPessoa='" + getIdPessoa() + "'" +
                 ", nome='" + getNome() + "'" +
                 ", sobrenome='" + getSobrenome() + "'" +
                 ", nascimento='" + getNascimento() + "'" +
-                ", contato='" + getContato() + "'" +
                 ", documento='" + getDocumento() + "'" +
+                ", contato='" + getContato() + "'" +
                 ", endereco='" + getEndereco() + "'" +
                 "}";
     }
+
 }
