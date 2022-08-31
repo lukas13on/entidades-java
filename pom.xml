@@ -1,0 +1,33 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0   
+http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>br.com.ingressai</groupId>
+    <artifactId>entidades-java</artifactId>
+    <version>1</version>
+    <properties>
+        <src.dir>src/</src.dir>
+    </properties>
+    <build>
+        <sourceDirectory>${src.dir}</sourceDirectory>
+        <scriptSourceDirectory>${src.dir}</scriptSourceDirectory>
+        <testSourceDirectory>${src.dir}</testSourceDirectory>
+        <outputDirectory>${src.dir}</outputDirectory>
+        <testOutputDirectory>${src.dir}</testOutputDirectory>
+        <directory>${src.dir}/target</directory>
+    </build>
+    <profiles>
+        <profile>
+            <id>development</id>
+            <properties>
+                <src.dir>${project.build.directory}/new-src</src.dir>
+            </properties>
+        </profile>
+    </profiles>
+    <dependencies>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.9.1</version>
+        </dependency>
+    </dependencies>
+</project>

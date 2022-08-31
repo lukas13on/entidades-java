@@ -45,14 +45,4 @@ public class Dimensao {
         this.peso = peso;
     }
 
-    @Override
-    public String toString() {
-        return "{" +
-                " comprimento='" + getComprimento() + "'" +
-                ", largura='" + getLargura() + "'" +
-                ", altura='" + getAltura() + "'" +
-                ", peso='" + getPeso() + "'" +
-                "}";
-    }
-
 }

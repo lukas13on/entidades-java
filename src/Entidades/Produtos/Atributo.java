@@ -35,13 +35,4 @@ public class Atributo {
         this.valor = valor;
     }
 
-    @Override
-    public String toString() {
-        return "{" +
-                " idAtributo='" + getIdAtributo() + "'" +
-                ", nome='" + getNome() + "'" +
-                ", valor='" + getValor() + "'" +
-                "}";
-    }
-
 }

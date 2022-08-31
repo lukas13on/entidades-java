@@ -1,4 +1,4 @@
-package Entidades.Pessoal;
+package Entidades.Pessoas;
 
 public class Endereco {
     private String idEndereco;
