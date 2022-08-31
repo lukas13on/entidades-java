@@ -57,6 +57,7 @@ public class _Usuario {
                 String nome = usuario.getPessoa().getNome();
                 String acesso = usuario.getAcesso();
                 String senha = usuario.getSenha();
+
                 System.out.println("Acesso :" + acesso);
                 System.out.println("senha :" + senha);
                 System.out.println("Olá :" + nome);

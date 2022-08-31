@@ -3,6 +3,7 @@ package Entidades;
 import Entidades.Produtos.Atributo;
 import Entidades.Produtos.Dimensao;
 import Entidades.Produtos.Estoque;
+import Entidades.Produtos.Imagem;
 import Entidades.Produtos.Variacao;
 
 public class Produto {
@@ -14,17 +15,19 @@ public class Produto {
     private Dimensao dimensao;
     private Atributo[] atributos;
     private Variacao[] variacoes;
+    private Imagem[] imagens;
     // fazer estoques
     private Estoque[] estoques;
 
     public Produto(String titulo, String descricao, double preco, Dimensao dimensao, Variacao[] variacoes,
-            Atributo[] atributos) {
+            Atributo[] atributos, Imagem[] imagens) {
         this.titulo = titulo;
         this.descricao = descricao;
         this.preco = preco;
         this.dimensao = dimensao;
         this.variacoes = variacoes;
         this.atributos = atributos;
+        this.imagens = imagens;
         // fazer estoques
     }
 
@@ -84,7 +87,7 @@ public class Produto {
         this.dimensao = dimensao;
     }
 
-    public Estoque[] getEstoque() {
+    public Estoque[] getEstoques() {
         return this.estoques;
     }
 
@@ -108,12 +111,16 @@ public class Produto {
         this.atributos = atributos;
     }
 
-    public Estoque[] getEstoques() {
-        return this.estoques;
-    }
-
     public void setEstoques(Estoque[] estoques) {
         this.estoques = estoques;
+    }
+
+    public Imagem[] getImagens() {
+        return this.imagens;
+    }
+
+    public void setImagens(Imagem[] imagens) {
+        this.imagens = imagens;
     }
 
     public String getVariacao() {
@@ -155,6 +162,49 @@ public class Produto {
         return resultado;
     }
 
+    public String getEstoque() {
+        String resultado = "{";
+        Boolean fecha;
+        int i = 0;
+
+        for (Atributo atributo : this.atributos) {
+            resultado += "{";
+            resultado += " idAtributo='" + atributo.getIdAtributo() + "'";
+            resultado += ", nome'" + atributo.getNome() + "'";
+            resultado += ", valor='" + atributo.getValor() + "'";
+            fecha = i == this.atributos.length - 1 ? true : false;
+            resultado += fecha ? "}" : "},";
+            i++;
+        }
+
+        resultado += "}";
+
+        return resultado;
+    }
+
+    public String getImagem() {
+        String resultado = "{";
+        Boolean fecha;
+        int i = 0;
+
+        for (Imagem imagem : this.imagens) {
+            resultado += "{";
+            resultado += " idImagem='" + imagem.getIdImagem() + "'";
+            resultado += ", nome'" + imagem.getNome() + "'";
+            resultado += ", caminho='" + imagem.getCaminho() + "'";
+            resultado += ", formato='" + imagem.getFormato() + "'";
+            resultado += ", comprimentoaltura='" + imagem.getComprimento() + "'";
+            resultado += ", altura='" + imagem.getAltura() + "'";
+            fecha = i == this.imagens.length - 1 ? true : false;
+            resultado += fecha ? "}" : "},";
+            i++;
+        }
+
+        resultado += "}";
+
+        return resultado;
+    }
+
     @Override
     public String toString() {
         return "{" +
@@ -164,7 +214,8 @@ public class Produto {
                 ", attributos='" + getAtributo() + "'" +
                 ", variacoes='" + getVariacao() + "'" +
                 ", dimensao='" + getDimensao() + "'" +
-                ", estoque='" + getEstoque() + "'" +
+                ", imagens='" + getImagem() + "'" +
+                /* ", estoque='" + getEstoque() + "'" + */
                 "}";
     }
 
