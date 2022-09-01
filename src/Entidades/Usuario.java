@@ -45,14 +45,4 @@ public class Usuario extends Modelo {
         this.pessoa = pessoa;
     }
 
-    @Override
-    public String toString() {
-        return "{" +
-                " idUsuario='" + getIdUsuario() + "'" +
-                ", acesso='" + getAcesso() + "'" +
-                ", senha='" + getSenha() + "'" +
-                ", pessoa='" + getPessoa() + "'" +
-                "}";
-    }
-
 }

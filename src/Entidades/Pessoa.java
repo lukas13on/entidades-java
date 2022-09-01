@@ -1,8 +1,8 @@
 package Entidades;
 
-import Entidades.Pessoal.Contato;
-import Entidades.Pessoal.Documento;
-import Entidades.Pessoal.Endereco;
+import Entidades.Pessoas.Contato;
+import Entidades.Pessoas.Documento;
+import Entidades.Pessoas.Endereco;
 
 public class Pessoa {
     private String idPessoa;
@@ -78,19 +78,6 @@ public class Pessoa {
 
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
-    }
-
-    @Override
-    public String toString() {
-        return "{" +
-                " idPessoa='" + getIdPessoa() + "'" +
-                ", nome='" + getNome() + "'" +
-                ", sobrenome='" + getSobrenome() + "'" +
-                ", nascimento='" + getNascimento() + "'" +
-                ", documento='" + getDocumento() + "'" +
-                ", contato='" + getContato() + "'" +
-                ", endereco='" + getEndereco() + "'" +
-                "}";
     }
 
 }
