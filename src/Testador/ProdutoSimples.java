@@ -1,4 +1,4 @@
-package Teste;
+package Testador;
 
 import com.google.gson.Gson;
 

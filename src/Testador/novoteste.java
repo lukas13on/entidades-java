@@ -1,7 +1,7 @@
-package Teste;
+package Testador;
 
 import Entidade.Pessoas.Documento;
-import Enumeracao.Pessoas.Documento.Tipo;
+import Enumerador.Pessoas.Documento.Tipo;
 
 public class novoteste {
     public static void main(String[] args) {

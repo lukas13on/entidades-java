@@ -1,4 +1,4 @@
-package Entidade;
+package Controlador;
 
 public class Sessao {
     

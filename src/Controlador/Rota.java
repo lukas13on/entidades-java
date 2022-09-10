@@ -1,8 +1,9 @@
-package Entidade;
+package Controlador;
 
 public class Rota {
     private int metodo;
     private String caminho;
+    private String grupo;
     private Visual visual;
 
     public static final int GET = 0;
@@ -36,6 +37,24 @@ public class Rota {
 
     public void setVisual(Visual visual) {
         this.visual = visual;
+    }
+
+    public String getGrupo() {
+        return this.grupo;
+    }
+
+    public void setGrupo(String grupo) {
+        this.grupo = grupo;
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+                " metodo='" + getMetodo() + "'" +
+                ", caminho='" + getCaminho() + "'" +
+                ", grupo='" + getGrupo() + "'" +
+                ", visual='" + getVisual() + "'" +
+                "}";
     }
 
 }

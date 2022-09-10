@@ -1,6 +1,6 @@
 package Entidade.Pessoas;
 
-import Enumeracao.Pessoas.Documento.Tipo;
+import Enumerador.Pessoas.Documento.Tipo;
 
 public class Documento {
     private Tipo tipo;

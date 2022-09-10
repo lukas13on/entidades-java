@@ -1,4 +1,4 @@
-package Teste;
+package Testador;
 
 import Entidade.Pessoa;
 import Entidade.Usuario;

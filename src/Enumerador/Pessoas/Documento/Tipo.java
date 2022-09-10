@@ -1,4 +1,4 @@
-package Enumeracao.Pessoas.Documento;
+package Enumerador.Pessoas.Documento;
 
 public enum Tipo {
     CPF("cpf"), CNPJ("cnpj");
