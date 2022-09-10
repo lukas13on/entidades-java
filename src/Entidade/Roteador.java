@@ -17,13 +17,13 @@ public class Roteador {
         this.rotas.add(rota);
     }
 
-    private void iniciar() {
+    public void iniciar() {
         for (Rota rota : this.rotas) {
             switch (rota.getMetodo()) {
 
                 case Rota.GET:
-                    Route rota = new Route();
-                    get("/users", rota.getVisual());
+                    // Route rota = new Route();
+                    // get("/users", rota.getVisual());
                     break;
                 case Rota.POST:
                     break;

@@ -20,8 +20,6 @@ public class Rotas {
                 Rota rotaSobre = new Rota(Rota.GET, "/", visualSobre);
                 this.getRoteador().registrar(rotaSobre);
 
-                this.getRoteador().iniciar();
-
         }
 
         public Roteador getRoteador() {
