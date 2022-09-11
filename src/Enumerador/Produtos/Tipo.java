@@ -1,8 +1,9 @@
-package Enumerador.Pessoas.Documento;
+package Enumerador.Produtos;
 
 public enum Tipo {
-    CPF("cpf"),
-    CNPJ("cnpj");
+    SIMPLES("simples"),
+    COMPOSTO("composto"),
+    VARIAVEL("variavel");
 
     public String tipo;
 

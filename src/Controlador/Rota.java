@@ -1,18 +1,19 @@
 package Controlador;
 
+import Visualizador.Visualizador;
+
 public class Rota {
     private int metodo;
     private String caminho;
-    private String grupo;
-    private Visual visual;
+    private Visualizador visualizador;
 
     public static final int GET = 0;
     public static final int POST = 1;
 
-    public Rota(int metodo, String caminho, Visual visual) {
+    public Rota(int metodo, String caminho, Visualizador visualizador) {
         this.metodo = metodo;
         this.caminho = caminho;
-        this.visual = visual;
+        this.visualizador = visualizador;
     }
 
     public int getMetodo() {
@@ -31,20 +32,12 @@ public class Rota {
         this.caminho = caminho;
     }
 
-    public Visual getVisual() {
-        return this.visual;
+    public Visualizador getVisual() {
+        return this.visualizador;
     }
 
-    public void setVisual(Visual visual) {
-        this.visual = visual;
-    }
-
-    public String getGrupo() {
-        return this.grupo;
-    }
-
-    public void setGrupo(String grupo) {
-        this.grupo = grupo;
+    public void setVisual(Visualizador visualizador) {
+        this.visualizador = visualizador;
     }
 
     @Override
@@ -52,7 +45,6 @@ public class Rota {
         return "{" +
                 " metodo='" + getMetodo() + "'" +
                 ", caminho='" + getCaminho() + "'" +
-                ", grupo='" + getGrupo() + "'" +
                 ", visual='" + getVisual() + "'" +
                 "}";
     }

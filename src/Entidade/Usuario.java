@@ -1,6 +1,6 @@
 package Entidade;
 
-public class Usuario extends Entidade {
+public class Usuario {
     private String idUsuario;
     private String acesso;
     private String senha;

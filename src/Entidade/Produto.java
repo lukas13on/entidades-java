@@ -5,10 +5,11 @@ import Entidade.Produtos.Dimensao;
 import Entidade.Produtos.Estoque;
 import Entidade.Produtos.Imagem;
 import Entidade.Produtos.Variacao;
+import Enumerador.Produtos.Tipo;
 
 public class Produto {
     private String idProduto;
-    private String tipo;
+    private Tipo tipo;
     private String titulo;
     private String descricao;
     private double preco;
@@ -18,14 +19,16 @@ public class Produto {
     private Imagem[] imagens;
     private Estoque estoque;
 
-    public static String PRODUTO_SIMPLES = "simples";
-    public static String PRODUTO_VARIAVEL = "variavel";
+    // produto teste
+    public Produto(String titulo) {
+        this.titulo = titulo;
+    }
 
     // produto simples
     public Produto(String idProduto, String titulo, String descricao, double preco, Dimensao dimensao,
             Imagem[] imagens,
             Atributo[] atributos, Estoque estoque) {
-        this.setTipo(PRODUTO_SIMPLES);
+        this.setTipo(Tipo.SIMPLES);
         this.idProduto = idProduto;
         this.titulo = titulo;
         this.descricao = descricao;
@@ -40,7 +43,7 @@ public class Produto {
     public Produto(String idProduto, String titulo, String descricao, Dimensao dimensao,
             Variacao[] variacoes,
             Atributo[] atributos) {
-        this.setTipo(PRODUTO_VARIAVEL);
+        this.setTipo(Tipo.VARIAVEL);
         this.idProduto = idProduto;
         this.titulo = titulo;
         this.descricao = descricao;
@@ -118,11 +121,11 @@ public class Produto {
         this.estoque = estoque;
     }
 
-    private void setTipo(String tipo) {
+    private void setTipo(Tipo tipo) {
         this.tipo = tipo;
     }
 
-    public String getTipo() {
+    public Tipo getTipo() {
         return this.tipo;
     }
 

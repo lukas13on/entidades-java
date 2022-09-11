@@ -1,12 +1,23 @@
-package Controlador;
+package Visualizador;
 
 import spark.Request;
 import spark.Response;
 
-public class Visual {
+public class Visualizador {
     private Request requisicao;
     private Response resposta;
     private String JSON = null;
+
+    /**
+     * Inicia o visualizador
+     */
+    public Visualizador() {
+        this.iniciar();
+    }
+
+    private void iniciar() {
+
+    }
 
     public Request getRequisicao() {
         return this.requisicao;
@@ -25,11 +36,20 @@ public class Visual {
     }
 
     public String getJSON() {
+
         return this.JSON;
     }
 
     public void setJSON(String JSON) {
         this.JSON = JSON;
+    }
+
+    public void get() {
+        this.setJSON("{}");
+    }
+
+    public void post() {
+        this.setJSON("{}");
     }
 
     @Override

@@ -1,12 +1,8 @@
 package Entidade.Pessoas;
 
+import Enumerador.Pessoas.Endereco.Tipo;
+
 public class Endereco {
-
-    enum Tipo {
-        COMERCIAL(),
-        RESIDENCIAL
-    }
-
     private Tipo tipo;
     private String logradouro;
     private String numero;

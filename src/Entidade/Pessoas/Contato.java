@@ -1,11 +1,8 @@
 package Entidade.Pessoas;
 
+import Enumerador.Pessoas.Contato.Tipo;
+
 public class Contato {
-
-    enum Tipo {
-
-    }
-
     private Tipo tipo;
     private String email;
     private String celular;

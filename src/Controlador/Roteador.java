@@ -6,30 +6,52 @@ import java.util.List;
 import static spark.Spark.*;
 
 import spark.Route;
-import spark.RouteGroup;
 
 public class Roteador {
     private int porta = 4567;
-    private List<Rota> rotas = new ArrayList<>();
+    private List<Rota> rotas = new ArrayList<Rota>();
 
+    /**
+     * Inica o roteador sem nenhuma rota
+     */
     public Roteador() {
 
     }
 
+    /**
+     * Inicia o roteador com uma unica rota
+     * 
+     * @param rota Rota
+     */
     public Roteador(Rota rota) {
 
     }
 
+    /**
+     * Inicia o roteador com uma lista de rotas
+     * 
+     * @param rotas Lista de rotas
+     */
     public Roteador(List<Rota> rotas) {
         for (int x = 0; x < rotas.size(); x++) {
             this.rotas.add(rotas.get(x));
         }
     }
 
+    /**
+     * Registra uma unica rota
+     * 
+     * @param rota Rota
+     */
     public void registrar(Rota rota) {
         this.rotas.add(rota);
     }
 
+    /**
+     * Registra uma lista de rotas
+     * 
+     * @param rotas Lista de rotas
+     */
     public void registrar(List<Rota> rotas) {
         for (int x = 0; x < rotas.size(); x++) {
             this.rotas.add(rotas.get(x));
@@ -51,15 +73,12 @@ public class Roteador {
                     Route executar = (requisicao, resposta) -> {
                         rota.getVisual().setResposta(resposta);
                         rota.getVisual().setRequisicao(requisicao);
+                        rota.getVisual().get();
                         return rota.getVisual().getJSON();
                     };
 
-                    if (rota.getGrupo() != null) {
-                        caminho = rota.getGrupo() + rota.getCaminho();
-                    }
-
                     get(caminho, executar);
-                    System.out.println("Rota registrada em: " + caminho);
+                    System.out.println("[GET]" + caminho);
                     System.out.println(rota);
 
                     break;
@@ -75,7 +94,7 @@ public class Roteador {
 
         }
 
-        System.out.println("Servidor aberto em http://localhost:" + this.porta);
+        System.out.println("Servidor aberto http://localhost:" + this.porta);
     }
 
 }

@@ -1,8 +1,8 @@
-package Enumerador.Pessoas.Documento;
+package Enumerador.Pessoas.Endereco;
 
 public enum Tipo {
-    CPF("cpf"),
-    CNPJ("cnpj");
+    RESIDENCIAL("residencial"),
+    COMERCIAL("comercial");
 
     public String tipo;
 
