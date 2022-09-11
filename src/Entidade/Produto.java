@@ -20,8 +20,10 @@ public class Produto {
     private Estoque estoque;
 
     // produto teste
-    public Produto(String titulo) {
+    public Produto(String titulo, String descricao, double preco) {
         this.titulo = titulo;
+        this.descricao = descricao;
+        this.preco = preco;
     }
 
     // produto simples
