@@ -1,6 +1,6 @@
 package Visualizador.Rotas;
 
-import Visualizador.Visualizador;
+import Entidade.Visualizador;
 
 public class Inicio extends Visualizador {
 

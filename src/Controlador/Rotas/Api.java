@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Controlador.Rota;
-import Visualizador.Rotas.Pessoa;
+import Visualizador.Rotas.Usuario;
 import Visualizador.Rotas.Produto;
 
 public class Api {
@@ -12,7 +12,7 @@ public class Api {
 
     public Api() {
         // pessoa
-        this.rotas.add(new Rota(Rota.GET, "/pessoa", new Pessoa()));
+        this.rotas.add(new Rota(Rota.GET, "/pessoa", new Usuario()));
 
         // produto
         this.rotas.add(new Rota(Rota.GET, "/produto", new Produto()));

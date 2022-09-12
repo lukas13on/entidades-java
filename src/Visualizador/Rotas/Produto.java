@@ -2,7 +2,7 @@ package Visualizador.Rotas;
 
 import com.google.gson.Gson;
 
-import Visualizador.Visualizador;
+import Entidade.Visualizador;
 
 public class Produto extends Visualizador {
 

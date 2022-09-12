@@ -1,6 +1,6 @@
 package Controlador;
 
-import Visualizador.Visualizador;
+import Entidade.Visualizador;
 
 public class Rota {
     private int metodo;

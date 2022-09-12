@@ -1,4 +1,4 @@
-package Visualizador;
+package Entidade;
 
 import spark.Request;
 import spark.Response;

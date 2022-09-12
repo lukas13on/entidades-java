@@ -1,10 +1,15 @@
 package Entidade;
 
-public class Usuario {
+public class Usuario extends Modelo {
     private String idUsuario;
     private String acesso;
     private String senha;
     protected Pessoa pessoa;
+
+    public Usuario(String acesso, String senha) {
+        this.acesso = acesso;
+        this.senha = senha;
+    }
 
     public Usuario(String idUsuario, String acesso, String senha, Pessoa pessoa) {
         this.idUsuario = idUsuario;
@@ -43,6 +48,26 @@ public class Usuario {
 
     public void setPessoa(Pessoa pessoa) {
         this.pessoa = pessoa;
+    }
+
+    public void buscarUsuario() {
+
+    }
+
+    public void criarUsuario() {
+
+    }
+
+    public void alterarUsuario() {
+
+    }
+
+    public void pegarUsuario() {
+
+    }
+
+    public void apagarUsuario() {
+
     }
 
 }
