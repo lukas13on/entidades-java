@@ -36,7 +36,6 @@ public class Visualizador {
     }
 
     public String getJSON() {
-
         return this.JSON;
     }
 
