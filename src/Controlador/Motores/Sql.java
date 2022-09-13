@@ -29,7 +29,10 @@ public class Sql {
             chaves.add(atributo.getChave());
             valores.add(atributo.getValor());
         }
-        resultado = "INSERT INTO" + tabela;
+        String campos = chaves.toString().replace("[", "");
+        campos.replace("]", "");
+        resultado += "INSERT INTO " + tabela + " (" + campos + ") ";
+        resultado += "VALUES" + " (" + valores.toString() + ");";
         // System.out.println(resultado);
         return resultado;
     }

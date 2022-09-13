@@ -17,6 +17,7 @@ public class Modelo {
     private String tabela;
 
     public List<Atributo> getAtributos() {
+
         Field[] fields = this.getClass().getDeclaredFields();
         List<Atributo> atributos = new ArrayList<>();
 
@@ -36,9 +37,12 @@ public class Modelo {
             }
 
             chave = fields[i].getName();
-            atributos.add(new Atributo(chave, valor));
 
+            if (chave != "tabela") {
+                atributos.add(new Atributo(chave, valor));
+            }
         }
+
         return atributos;
     }
 
