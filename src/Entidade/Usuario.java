@@ -1,5 +1,11 @@
 package Entidade;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import Controlador.Banco;
+
 public class Usuario extends Modelo {
     private String idUsuario;
     private String acesso;
@@ -13,9 +19,8 @@ public class Usuario extends Modelo {
         this.senha = senha;
     }
 
-    public Usuario(String idUsuario, String acesso, String senha, Pessoa pessoa) {
+    public Usuario(String acesso, String senha, Pessoa pessoa) {
         super(tabela);
-        this.idUsuario = idUsuario;
         this.acesso = acesso;
         this.senha = senha;
         this.pessoa = pessoa;
@@ -57,8 +62,21 @@ public class Usuario extends Modelo {
 
     }
 
-    public void criarUsuario() {
+    public String criarUsuario() {
+        Connection con = this.getBanco().getConexao();
+        String sql = "INSERT INTO " + this.getTabela() + " (acesso, senha) VALUES (?, ?, ?)";
 
+        try (PreparedStatement preparar = con.prepareStatement(sql)) {
+            preparar.setString(1, "lukas13on");
+            preparar.setString(2, "123456");
+            sql = preparar.toString();
+            preparar.executeUpdate();
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        return sql;
     }
 
     public void alterarUsuario() {
