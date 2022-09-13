@@ -5,13 +5,16 @@ public class Usuario extends Modelo {
     private String acesso;
     private String senha;
     protected Pessoa pessoa;
+    private static final String tabela = "usuario";
 
     public Usuario(String acesso, String senha) {
+        super(tabela);
         this.acesso = acesso;
         this.senha = senha;
     }
 
     public Usuario(String idUsuario, String acesso, String senha, Pessoa pessoa) {
+        super(tabela);
         this.idUsuario = idUsuario;
         this.acesso = acesso;
         this.senha = senha;

@@ -1,4 +1,4 @@
-package Enumerador.Motor;
+package Controlador.Motores;
 
 public class Atributo {
     private String chave;
