@@ -4,10 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import Controlador.Banco;
-
 public class Usuario extends Modelo {
-    private String idUsuario;
+    protected String idUsuario;
     private String acesso;
     private String senha;
     protected Pessoa pessoa;
@@ -64,13 +62,22 @@ public class Usuario extends Modelo {
 
     public String criarUsuario() {
         Connection con = this.getBanco().getConexao();
-        String sql = "INSERT INTO " + this.getTabela() + " (acesso, senha) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO " + this.getTabela() + " (acesso, senha) VALUES (?, ?)";
 
-        try (PreparedStatement preparar = con.prepareStatement(sql)) {
-            preparar.setString(1, "lukas13on");
-            preparar.setString(2, "123456");
-            sql = preparar.toString();
-            preparar.executeUpdate();
+        try (PreparedStatement declarar = con.prepareStatement(sql)) {
+
+            declarar.getParameterMetaData();
+
+            declarar.setString(1, "lukas13on");
+            declarar.setString(2, "123456");
+
+            if (this.pessoa != null) {
+                declarar.setString(2, "123456");
+            }
+
+            sql = declarar.toString();
+            declarar.executeUpdate();
+
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

@@ -15,9 +15,10 @@ public class Banco {
     private void conectar() {
 
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             this.conexao = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/banco", usuario, senha);
         } catch (Exception e) {
+            System.out.println("Falha ao comunicar com o banco de dados...");
             e.printStackTrace();
         }
 
