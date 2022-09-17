@@ -12,7 +12,7 @@ public class Documento {
     }
 
     public String getTipo() {
-        return this.tipo.get();
+        return this.tipo.toString();
     }
 
     public void setTipo(Tipo tipo) {

@@ -66,13 +66,29 @@ public class Usuario extends Modelo {
 
         try (PreparedStatement declarar = con.prepareStatement(sql)) {
 
-            declarar.getParameterMetaData();
-
-            declarar.setString(1, "lukas13on");
-            declarar.setString(2, "123456");
+            // declarar.getParameterMetaData();
+            declarar.setString(1, this.getAcesso());
+            declarar.setString(2, this.getSenha());
 
             if (this.pessoa != null) {
-                declarar.setString(2, "123456");
+                declarar.setString(2, this.pessoa.getNome());
+                declarar.setString(2, this.pessoa.getSobrenome());
+                declarar.setString(2, this.pessoa.getNascimento());
+            }
+
+            if (this.pessoa.documento != null) {
+                declarar.setString(2, this.pessoa.documento.getTipo().toString());
+                declarar.setString(2, this.pessoa.documento.getNumero());
+            }
+
+            if (this.pessoa.contato != null) {
+                declarar.setString(2, this.pessoa.contato.getTipo().toString());
+                declarar.setString(2, this.pessoa.contato.getEmail());
+                declarar.setString(2, this.pessoa.contato.getEmail());
+            }
+
+            if (this.pessoa.endereco != null) {
+
             }
 
             sql = declarar.toString();

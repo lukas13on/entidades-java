@@ -12,9 +12,33 @@ public class Pessoa {
     protected Contato contato;
     protected Endereco endereco;
 
-    // pessoa teste
     public Pessoa(String nome) {
         this.nome = nome;
+    }
+
+    public Pessoa(String nome, String sobrenome, String nascimento) {
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.nascimento = nascimento;
+    }
+
+    public Pessoa(String nome, String sobrenome, String nascimento, Documento documento) {
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.nascimento = nascimento;
+    }
+
+    public Pessoa(String nome, String sobrenome, String nascimento, Documento documento, Contato contato) {
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.nascimento = nascimento;
+    }
+
+    public Pessoa(String nome, String sobrenome, String nascimento, Documento documento, Contato contato,
+            Endereco endereco) {
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.nascimento = nascimento;
     }
 
     public String getNome() {

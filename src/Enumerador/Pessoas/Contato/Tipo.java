@@ -10,7 +10,7 @@ public enum Tipo {
         tipo = param;
     }
 
-    public String get() {
+    public String toString() {
         return this.tipo;
     }
 
