@@ -1,21 +1,28 @@
+-- Criar o banco de dados – Escola
+-- Lembrar de criar todos os detalhes – chave primárias – chave estrangeiras- tipos de dados;
+-- Criar a tabela professor;
+-- Criar a tabela aluno;
+-- Criar a tabela turma;
+-- Criar a tabela aula;
+-- Aluno pode pertencer somente a uma turma;
+-- Um turma pode ter vários alunos;
+-- Um professor pode pertencer a várias turmas;
+-- Uma turma pode ter vários professores;
+-- Uma aula pode ter somente um professor;
+-- Uma aula pode ter vários alunos;
 CREATE DATABASE EscolaLucas;
 
 use EscolaLucas;
 
 CREATE TABLE Professor(
     idProfessor int primary key not null,
-    -- Um professor pode pertencer a várias turmas;
-    -- Uma turma pode ter vários professores;
     nome varchar(255),
-    sobrenome varchar(255),
-    idTurmaProfessor int not null
+    sobrenome varchar(255)
 );
 
 CREATE TABLE Aluno(
     idAluno int primary key not null,
-    -- Um turma pode ter vários alunos;
     idTurma int not null,
-    -- Uma aula pode ter vários alunos;
     idAula int not null,
     nome varchar(255),
     sobrenome varchar(255)
@@ -23,15 +30,10 @@ CREATE TABLE Aluno(
 
 CREATE TABLE Turma(
     idTurma int primary key not null,
-    -- Um professor pode pertencer a várias turmas;
-    -- Uma turma pode ter vários professores;
-    idTurmaProfessor int not null,
     nome varchar(255),
     sobrenome varchar(255)
 );
 
--- Um professor pode pertencer a várias turmas;
--- Uma turma pode ter vários professores;
 CREATE TABLE TurmaProfessores(
     idTurmaProfessor int primary key not null,
     idTurma int not null,
